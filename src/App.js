@@ -3,7 +3,7 @@ import './index.css';
 import Router from './router/index'
 function App() {
   return (
-    <div className="App text-red-700">
+    <div className="App">
       <Router />
     </div>
   );
