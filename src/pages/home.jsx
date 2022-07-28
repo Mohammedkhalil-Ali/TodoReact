@@ -44,6 +44,10 @@ export default function Home() {
     setNaw(datanaw.map(item=>item.id==show.userId? {...item,name:updateItem.name}:item)) 
     setShow({show:true,userId:null})
   }
+
+  const DeleteItem=(DelId)=>{
+    setNaw((item)=>item.filter(i=>i.id!=DelId))
+  }
   return (
     <Fragment>
       <div className='flex items-center justify-center h-screen w-screen  text-white bg-slate-300'>
@@ -60,7 +64,7 @@ export default function Home() {
                        hover:bg-slate-400 p-2 bg-slate-100 flex justify-between' key={event.name}>
               <div className="name">{event.name}</div>
               <div className="name flex">
-                <button className='text-red-700'>Del</button>
+                <button className='text-red-700' onClick={()=>{DeleteItem(event.id)}}>Del</button>
                 <button className='text-blue-700' onClick={()=>{UpdateItemM(event.id)}}>Up</button>
               </div>
             </div>) 
